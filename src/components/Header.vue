@@ -9,10 +9,7 @@
           class="navbar-horizontal"
         >
           <b-navbar-brand href="#">FLOWERS SHOP</b-navbar-brand>
-
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-         
         </b-navbar>
       </div>
     </div>
