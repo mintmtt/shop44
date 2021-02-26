@@ -1,21 +1,9 @@
  <template>
   <div class="cart">
-    <!-- <div v-if="!cart.length" class="alert alert-secondary" role="alert"></div> -->
+   
     <div
       v-if="orderPlaced"
-      @click="() => this.orderPlaced=false"
-      class="alert alert-success alert-dismissible fade show"
-      role="alert"
     >
-      เพิ่มสินค้าแล้ว
-      <button
-        type="button"
-        class="close"
-        data-dismiss="alert"
-        aria-label="Close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
     </div>
     <ul class="list-group">
       <li class="list-group-item" v-for="item in cart" :key="item.id">
