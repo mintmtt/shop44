@@ -2,7 +2,7 @@
   <div class="row">
      <div
       class="card"
-      style="width: 25rem; margin-left: 8rem;  background-color: rgb(202, 191, 212);"
+      style="width: 25rem; margin-left: 8rem;  background-color: rgb(202, 191, 212); padding-bottom: 2rem;"
       v-for="item in products"
       :key="item.id"
     >
@@ -19,7 +19,7 @@
           <b-col>
             <b-card-text>
               <b-card-title>{{ item.title }}</b-card-title>
-              <b-card-text>$ {{ item.price.toLocaleString() }}</b-card-text>
+              <b-card-text>ราคา {{ item.price.toLocaleString() }} บาท</b-card-text>
               <b-button variant="outline-success" @click="addItemToCart(item)">
                 Add to cart
               </b-button>
@@ -42,7 +42,6 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-
 export default {
   name: "Shop",
   mounted() {
@@ -63,3 +62,4 @@ export default {
   border: none;
 }
 </style>
+ 

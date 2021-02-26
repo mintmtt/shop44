@@ -1,8 +1,21 @@
 <template>
   <header>
-    <nav class="navbar navbar-light" style="background-color: #9370DB;">
-      <span class="navbar-brand mb-0 h1" style="text-align: center;">Flowers Shop</span>
-    </nav>
+    <div>
+      <div>
+        <b-navbar
+          toggleable="lg"
+          type="dark"
+          variant="danger"
+          class="navbar-horizontal"
+        >
+          <b-navbar-brand href="#">FLOWERS SHOP</b-navbar-brand>
+
+          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+         
+        </b-navbar>
+      </div>
+    </div>
   </header>
 </template>
 
@@ -12,7 +25,7 @@ import { mapGetters } from "vuex";
 export default {
   name: "Header",
   computed: {
-    ...mapGetters(['cart']),
+    ...mapGetters(["cart"]),
     totalQty() {
       return this.cart.reduce((a, b) => a + b.qty, 0);
     },
@@ -22,6 +35,9 @@ export default {
 
 <style scoped>
 header {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+.navbar-brand {
+  text-align: center;
 }
 </style>

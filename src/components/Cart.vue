@@ -29,19 +29,20 @@
           <span aria-hidden="true">&times;</span>
         </button>
         <div class="media">
-          <img width="80px" :src="item.imgUrl" class="mr-3" alt="item.title" />
+          <img width="100px" :src="item.imgUrl" class="mr-3" alt="item.title" />
           <div class="media-body">
-            <p class="mt-0">{{ item.title }}</p>
-            <button class="qty-button btn btn-sm btn-secondary" @click="reduceQty(item.id)">-</button>
+            <p class="nd mt-0">{{ item.title }}</p>
+            <b-button class="qty-button btn btn-sm " variant="outline-danger" @click="reduceQty(item.id)">-</b-button>
              {{ item.qty }}
-            <button
-              class="qty-button btn btn-sm btn-secondary"
+            <b-button
+              class="qty-button btn btn-sm " variant="outline-success"
               @click="addQty(item.id)"
-            >+</button>
+            >+</b-button>
           </div>
         </div>
       </li>
     </ul>
+    
     <button
       v-if="cart.length"
       @click="placeOrder"
@@ -51,7 +52,7 @@
       <div v-if="isProcessing" class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
       </div>
-      <span v-else>Checkout ($ {{ totalPrice.toLocaleString() }})</span>
+      <span v-else>Total {{ totalPrice.toLocaleString() }} บาท</span>
     </button>
   </div>
 </template>
@@ -94,11 +95,18 @@ export default {
 }
 
 .qty-button {
-  border-radius: 50%;
   width: 30px;
 }
 
 .checkout-button {
   margin-top: 20px;
+}
+
+.media-body{
+  padding-left: 2rem;
+}
+
+.nd{
+  padding-left: 0.3rem;
 }
 </style>
